@@ -163,7 +163,7 @@
 
  .work-samples-visible {
      display: grid;
-     grid-template-columns: repeat(auto-fill, 350px);
+     grid-template-columns: repeat(auto-fill, 300px);
      gap: 2rem;
  }
 
@@ -172,7 +172,7 @@
  }
 
  .card {
-     height: 251px;
+     height: 201px;
      border-radius: 8px;
      border: 1px solid var(--card-border-color);
      background-color: var(--bg-color);
