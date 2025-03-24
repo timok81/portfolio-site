@@ -1,0 +1,474 @@
+ :root {
+     --text-color: #2b2b2b;
+     --bg-color: #f1f1f1;
+     --heading-color: #464646;
+     --header-bg-color: #ffffff;
+     --accent-color: #772525;
+     --link-color: #0965b1;
+     --card-border-color: #bebebe;
+     --card-glow-color: rgb(57, 136, 255, 0.25);
+ }
+
+ .dark-theme {
+     --text-color: #ececec;
+     --bg-color: rgb(27, 35, 44);
+     --heading-color: #b1b6bd;
+     --header-bg-color: #232e3a;
+     --accent-color: #ff7056;
+     --link-color: #59afff;
+     --card-border-color: #585858;
+     --card-glow-color: rgba(57, 136, 255, 0.25);
+ }
+
+ .dark-theme .svg {
+     filter: invert(60%) sepia(96%) saturate(0%) hue-rotate(101deg) brightness(104%) contrast(103%);
+ }
+
+ .dark-theme .close-image {
+     filter: invert(100%) sepia(96%) saturate(0%) hue-rotate(101deg) brightness(104%) contrast(103%);
+ }
+
+ * {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+ }
+
+ /*prevents nav menu from shifting to left when vertical scrollbar is present*/
+ html {
+     overflow-x: hidden;
+     margin-right: calc(100% - 100vw);
+ }
+
+ body {
+     font-family: "Roboto", sans-serif;
+     font-optical-sizing: auto;
+     font-weight: 200;
+     font-display: block;
+     line-height: 1.75;
+     color: var(--text-color);
+     background-color: var(--bg-color);
+ }
+
+ .page-content {
+     display: flex;
+ }
+
+ .theme-toggle {
+     float: right;
+     background: transparent;
+     border: none;
+     z-index: 999;
+     cursor: pointer;
+     transition: transform 0.1s;
+     position: relative;
+ }
+
+ .theme-toggle:hover {
+     transform: scale(1.25);
+ }
+
+ header {
+     width: 400px;
+     flex: 1 0 auto;
+     background-color: var(--header-bg-color);
+     padding: 2rem;
+     min-height: 100vh;
+     font-size: 1.25rem;
+     overflow: hidden;
+ }
+
+
+ main {
+     padding: 2rem 3rem 2rem 2rem;
+     width: 100%;
+     font-size: 1.25rem;
+ }
+
+ hr {
+     background-color: var(--accent-color);
+     height: 1px;
+     border: 0;
+     margin: 1rem 0 1rem 0;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+     color: var(--accent-color);
+     font-weight: 200;
+     margin-bottom: 0.5rem;
+ }
+
+ h1,
+ h3 {
+     font-size: 2.5rem;
+ }
+
+ .work {
+     max-width: 2000px;
+ }
+
+ .work-header h3 {
+     color: var(--text-color);
+ }
+
+ h2 {
+     font-size: 1rem;
+     margin-bottom: 1rem;
+ }
+
+ h4 {
+     color: var(--text-color);
+ }
+
+ a {
+     text-decoration: none;
+     color: var(--link-color);
+     font-weight: 300;
+     z-index: 999;
+ }
+
+ a:hover {
+     text-decoration: underline;
+     text-underline-offset: 5px;
+ }
+
+ .header-link,
+ .modal-links div {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     justify-content: left;
+     margin-bottom: 0.25rem;
+ }
+
+ .artstation-icon-container {
+     width: 20px;
+     height: 20px;
+     background-image: url("../img/ArtStation-logomark-white.svg");
+     background-size: cover;
+ }
+
+ .work-header {
+     margin-bottom: 1rem;
+ }
+
+ .work-header h3 {
+     color: var(--heading-color);
+ }
+
+ .work-samples-visible {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, 350px);
+     gap: 2rem;
+ }
+
+ .work-samples-hidden {
+     display: none;
+ }
+
+ .card {
+     height: 251px;
+     border-radius: 8px;
+     border: 1px solid var(--card-border-color);
+     background-color: var(--bg-color);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     transition: transform 0.1s;
+     cursor: pointer;
+     overflow: hidden;
+ }
+
+ .card-header {
+     height: 50px;
+     display: flex;
+     align-items: center;
+     font-size: 1.25rem;
+     width: 100%;
+     justify-content: center;
+     border-bottom: 2px solid var(--card-border-color);
+     background-color: var(--header-bg-color);
+ }
+
+ .card-image {
+     width: 100%;
+     height: 100%;
+     background-size: cover;
+     background-position: top center;
+ }
+
+ .card-footer {
+     height: 50px;
+     padding: 0.5rem;
+     font-size: 14px;
+     border-top: 1px solid var(--card-border-color);
+ }
+
+ .card:hover {
+     transform: translateY(-7px);
+     box-shadow: 0 0 25px var(--card-glow-color);
+ }
+
+ .project-modal-hidden {
+     opacity: 0;
+     visibility: hidden;
+     height: 0;
+     width: 0;
+     position: fixed;
+     top: 0;
+     left: 0;
+ }
+
+ .project-modal-visible {
+     position: relative;
+     visibility: visible;
+     display: flex;
+     opacity: 1;
+ }
+
+ .project-modal-bg-hidden {
+     visibility: hidden;
+     height: 0;
+     width: 0;
+ }
+
+ .project-modal-bg-visible {
+     visibility: visible;
+     position: fixed;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     width: 100%;
+     height: 100%;
+     background-color: transparent;
+     z-index: 0;
+ }
+
+ .modal-content-hidden {
+     visibility: hidden;
+     opacity: 0;
+     height: 0;
+ }
+
+
+ .modal-content-visible {
+     visibility: visible;
+     display: flex;
+     opacity: 1;
+     z-index: 99;
+     flex-direction: column;
+     width: 100%;
+     max-width: 1500px;
+     min-height: 400px;
+     border: 1px solid var(--card-border-color);
+     border-radius: 10px;
+     box-shadow: 3px 3px 10px rgb(0, 0, 0, 0.25);
+     background-color: var(--header-bg-color);
+     transition: opacity 0.3s;
+     padding: 1rem 3rem 1rem 1rem;
+ }
+
+ .modal-content-visible:focus {
+     outline: none;
+ }
+
+ .modal-header {
+     display: flex;
+     align-items: center;
+     margin-bottom: 1.5rem;
+ }
+
+ .modal-header h1 {
+     font-size: 2rem;
+     font-weight: 300;
+     margin: 0;
+ }
+
+ .close-modal,
+ .close-image {
+     cursor: pointer;
+     transition: transform 0.1s;
+     font-size: 1.5rem;
+     color: var(--heading-color);
+     border: 0;
+ }
+
+ .close-modal {
+     margin-right: 1rem;
+     background: none;
+ }
+
+ .close-modal:hover,
+ .close-image:hover {
+     transform: scale(1.25);
+ }
+
+ .close-modal:hover {
+     color: var(--text-color);
+ }
+
+ .modal-description {
+     padding-left: 2.5rem;
+     margin-bottom: 3rem;
+     max-width: 1000px;
+ }
+
+ .modal-links {
+     padding-left: 2.5rem;
+     margin-bottom: 2rem;
+ }
+
+ .modal-screenshots {
+     padding-left: 2.5rem;
+     margin-bottom: 2rem;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 1rem;
+ }
+
+ .thumbnail {
+     height: 150px;
+     width: auto;
+     border-radius: 5px;
+     border: 1px solid var(--card-border-color);
+     cursor: pointer;
+     transition: transform 0.1s;
+ }
+
+ .thumbnail:hover {
+     transform: translateY(-7px);
+     box-shadow: 0 0 25px var(--card-glow-color);
+ }
+
+ .thumbnail-fullsize {
+     width: auto;
+     height: 800px;
+ }
+
+ .image-modal {
+     border: none;
+     outline: none;
+     margin: 0;
+     padding: 0;
+     justify-self: center;
+     align-self: center;
+     box-shadow: 3px 3px 6px rgb(0, 0, 0, 0.25);
+     position: fixed;
+     overflow: visible;
+     background-color: var(--bg-color);
+ }
+
+ .project-image {
+     max-width: 100%;
+     max-height: 800px;
+     margin: 0 0 -7.69px 0;
+     /* without this margin there is a small gap at the bottom of the image modal*/
+ }
+
+ .close-image {
+     position: absolute;
+     right: -2.5rem;
+     top: 0;
+     border-radius: 25%;
+
+     background: none;
+
+ }
+
+
+ @media all and (max-width: 1250px) {
+     .modal-description {
+         width: 100%;
+     }
+ }
+
+ @media all and (max-width: 900px) {
+     .page-content {
+         flex-direction: column;
+     }
+
+     header {
+         width: 100%;
+         margin-bottom: 2rem;
+     }
+
+     main {
+         padding-left: 0rem;
+         padding-right: 0rem;
+         width: 100%;
+     }
+
+     .modal-description {
+         margin-bottom: 1rem;
+         width: 100%;
+     }
+ }
+
+ @media all and (max-width: 500px) {
+     body {
+         text-align: center;
+     }
+
+     header {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         text-align: left;
+         min-height: 100%;
+         margin-bottom: 0;
+     }
+
+     .theme-toggle {
+         position: absolute;
+         right: 2rem;
+         background: transparent;
+         border: none;
+         z-index: 999;
+         cursor: pointer;
+         transition: transform 0.1s;
+     }
+
+     hr {
+         width: 100%;
+     }
+
+     .work-samples-visible {
+         grid-template-columns: repeat(auto-fill, 300px);
+         justify-content: center;
+     }
+
+     .modal-content-visible {
+         margin: 0 1rem 0 1rem;
+         font-size: 1rem;
+         padding: 0.5rem 2rem 0.5rem 0.5rem;
+     }
+
+     .modal-header h1 {
+         font-size: 1.5rem;
+     }
+
+     .close-modal {
+         margin-right: 1rem;
+     }
+
+     .modal-links {
+         padding-left: 1rem;
+         margin-bottom: 2rem;
+     }
+
+     .modal-description {
+         width: 100%;
+         text-align: left;
+         padding-left: 1rem;
+     }
+
+     .modal-screenshots {
+         display: none;
+     }
+ }

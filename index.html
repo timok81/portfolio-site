@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="./img/favicon-32x32.png" type="image/x-icon" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+  <title>Timo Kujansuu</title>
+</head>
+
+<body>
+  <div class="page-content">
+    <header>
+      <button class=" theme-toggle" aria-label="Toggle dark/light theme"><img src="./img/brightness-6.svg" alt=""
+          width="20px" class="svg" title="Toggle dark/light theme"></button>
+      <h1>Timo Kujansuu</h1>
+      <hr>
+      <p class="header-link"><img src="./img/email-outline.svg" alt="email" width="20px"
+          class="svg">timokujansuu@gmail.com
+      </p>
+      <nav>
+        <p class="header-link"><img src="./img/211904_social_github_icon.svg" alt="email" width="20px" class="svg"><a
+            href="https://github.com/timok81" target="_blank">My Github page</a>
+        </p>
+        <p class="header-link"><img src="./img/artstation-icon.png" alt="email" width="20px"><a
+            href="https://timokujansuu.artstation.com/" target="_blank">My
+            Artstation page</a></p>
+      </nav>
+      <hr>
+      <article>
+        <p>Hello there, you've found my webdev portfolio site.</p>
+        <br>
+        <p>I'm Timo, an aspiring web developer based in Germany. I'm interested in working on front-end
+          projects but also have experience with the MERN stack.</p>
+        <br>
+        <p>Feel free send me an email if you'd like to get in touch.</p>
+      </article>
+    </header>
+    <main>
+      <div class="work">
+        <div class="work-header">
+          <h3>Projects</h3>
+        </div>
+
+        <div class="work-samples-visible"></div>
+
+        <div class="project-modal-hidden" role="dialog" aria-labelledby="modal-title">
+          <div class="project-modal-bg-hidden"></div>
+          <div class="modal-content-hidden">
+            <div class="modal-header">
+              <button class="close-modal" tabindex="0" aria-label="Close modal">◀</button>
+              <div class="modal-heading">
+                <h1 id="modal-title">Project title</h1>
+              </div>
+            </div>
+            <div class="modal-links">
+              <div><img src="./img/open-in-new.svg" alt="open" width="20px" class="svg"><a href="" target="_blank">View
+                  site</a>
+              </div>
+              <div><img src="./img/211904_social_github_icon.svg" alt="github" width="20px" class="svg"><a href=""
+                  target="_blank">View
+                  Github repo</a>
+              </div>
+            </div>
+            <div class="modal-description"></div>
+            <div class="modal-screenshots"></div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <dialog class="image-modal">
+      <img src="./img/close.svg" alt="email" width="40px" class="close-image">
+      <img src="#" alt="image of project" class="project-image">
+    </dialog>
+
+  </div>
+  <script src="./scripts/scripts.js"></script>
+</body>
+
+</html>
