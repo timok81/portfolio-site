@@ -86,8 +86,8 @@ const projectData = [
     synopsis: "My portfolio site",
     description:
       "This very site you're currently looking at.\n I wanted this site to be simple to work with and not use any third party tools. Everything happens on one page and javascript is used to display the content.\n Project details are displayed with modals that are integrated to the layout of the site (this modal being an example). I also wanted a particular visual style, so I didn't want to use an external library for that. \n\n Made with: HTML, CSS, Javascript.",
-    siteURL: "#",
-    githubURL: "https://github.com/timok81/cf-movies-angular-client",
+    siteURL: "https://timok81.github.io/portfolio-site/",
+    githubURL: "https://github.com/timok81/portfolio-site",
     screenshots: ["./img/projects/project7/project7_screenshot1.png"],
   },
 ];
