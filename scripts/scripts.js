@@ -15,6 +15,7 @@ const projectData = [
       "./img/projects/project3/project3_screenshot5.png",
       "./img/projects/project3/project3_screenshot6.png",
     ],
+    tech: "React, Redux, Node/Express, MongoDb, Mongoose",
   },
   {
     title: "Movie database API",
@@ -24,12 +25,13 @@ const projectData = [
     siteURL: "https://moviemovie-7703363b92cb.herokuapp.com/api-documentation/",
     githubURL: "https://github.com/timok81/cf-movie-api",
     screenshots: ["./img/projects/project2/project2_screenshot1_.png"],
+    tech: "Node/Express, MongoDb, Mongoose",
   },
   {
     title: "Meet App",
     synopsis: "PWA for viewing events on Google Calendar",
     description:
-      "A progressive web app for searching and viewing events at different locations with the ability to add them to your calendar.\n Uses serverless functions for authorization and fetching events from Google Calendar API. Built with test-driven development practices using React Testing Library, Jest-Cucumber and Puppeteer. It also features charts for viewing information about the events with the help of Recharts.\n\n Made with:\n React, Vite, AWS Lambda, OAuth2, Recharts, React testing library, Jest-Cucumber, Puppeteer. \n",
+      "A progressive web app for searching and viewing events at different locations with the ability to add them to your calendar.\n Uses serverless functions for authorization and fetching events from Google Calendar API. Built with test-driven development practices using React Testing Library, Jest-Cucumber and Puppeteer. Also features charts for viewing information about the events with the help of Recharts.\n\n Made with:\n React, Vite, AWS Lambda, OAuth2, Recharts, React testing library, Jest-Cucumber, Puppeteer. \n",
     siteURL: "https://cf-meet.vercel.app/",
     githubURL: "https://github.com/timok81/cf-meet",
     screenshots: [
@@ -38,6 +40,7 @@ const projectData = [
       "./img/projects/project4/project4_screenshot2.png",
       "./img/projects/project4/project4_screenshot3.png",
     ],
+    tech: "React, AWS Lambda, OAuth2, React Testing Library, Jest-Cucumber, Puppeteer",
   },
   {
     title: "React Native Chat",
@@ -52,12 +55,13 @@ const projectData = [
       "./img/projects/project5/project5_screenshot2.png",
       "./img/projects/project5/project5_screenshot3.png",
     ],
+    tech: "React Native, Expo, Gifted Chat",
   },
   {
     title: "Pokedex",
     synopsis: "Pokemon browsing app",
     description:
-      "A simple pokedex app that let's you browse Pokemons and view their data.\n This project was an introduction to working with Javascript and fetching and displaying API data, as well as using Bootstrap for styling. The pokemon data comes from www.pokeapi.co.\n\n Made with:\n HTML, CSS, Javascript, Bootstrap. \n",
+      "A simple pokedex app that let's you browse Pokemons and view their data.\n This project was an introduction to working with Javascript and fetching and displaying API data, as well as using Bootstrap for styling. The pokemon data comes from www.pokeapi.co.\n\n Made with:\n HTML, CSS, JavaScript, Bootstrap. \n",
     siteURL: "https://timok81.github.io/cf-pokedex/",
     githubURL: "https://github.com/timok81/cf-pokedex",
     screenshots: [
@@ -66,6 +70,7 @@ const projectData = [
       "./img/projects/project1/project1_screenshot2.png",
       "./img/projects/project1/project1_screenshot3.png",
     ],
+    tech: "HTML, CSS, JavaScript, Bootstrap",
   },
   {
     title: "MovieDb Angular",
@@ -80,15 +85,17 @@ const projectData = [
       "./img/projects/project6/project6_screenshot2.png",
       "./img/projects/project6/project6_screenshot3.png",
     ],
+    tech: "Angular, Angular Material",
   },
   {
     title: "My portfolio site",
     synopsis: "My portfolio site",
     description:
-      "This very site you're currently looking at.\n I wanted this site to be simple to work with and not use any third party tools. Everything happens on one page and javascript is used to display the content.\n Project details are displayed with modals that are integrated to the layout of the site (this modal being an example). I also wanted a particular visual style, so I didn't want to use an external library for that. \n\n Made with: HTML, CSS, Javascript.",
+      "This very site you're currently looking at.\n I wanted this site to be simple to work with and not use any third party tools. Everything happens on one page and javascript is used to display the content.\n Project details are displayed with modals that are integrated to the layout of the site (this modal being an example). I also wanted a particular visual style, so I didn't want to use an external library for that. \n\n Made with: HTML, CSS, JavaScript.",
     siteURL: "https://timok81.github.io/portfolio-site/",
     githubURL: "https://github.com/timok81/portfolio-site",
     screenshots: ["./img/projects/project7/project7_screenshot1.png"],
+    tech: "HTML, CSS, JavaScript",
   },
 ];
 
@@ -172,6 +179,10 @@ projectData.forEach((project) => {
   const cardImage = document.createElement("div");
   cardImage.classList.add("card-image");
   cardImage.style.backgroundImage = `url(${project.screenshots[0]})`;
+  const cardBgOverlay = document.createElement("div");
+  cardBgOverlay.classList.add("card-bg-overlay");
+  cardBgOverlay.innerText = project.tech;
+  cardImage.appendChild(cardBgOverlay);
   card.appendChild(cardImage);
 
   card.addEventListener("click", () => {

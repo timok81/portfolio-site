@@ -1,12 +1,14 @@
  :root {
-     --text-color: #2b2b2b;
+     --text-color: #1a1a1a;
      --bg-color: #f1f1f1;
      --heading-color: #464646;
      --header-bg-color: #ffffff;
-     --accent-color: #772525;
+     --accent-color: rgb(119, 37, 37);
      --link-color: #0965b1;
-     --card-border-color: #bebebe;
-     --card-glow-color: rgb(57, 136, 255, 0.25);
+     --card-border-color:  #b9853f;
+     --card-glow-color: rgba(0, 0, 0, 0.25);
+     --card-overlay-color-a: rgba(30, 44, 63, 1);
+     --card-overlay-color-b: rgba(30, 44, 63, 0.95);
  }
 
  .dark-theme {
@@ -16,8 +18,10 @@
      --header-bg-color: #232e3a;
      --accent-color: #ff7056;
      --link-color: #59afff;
-     --card-border-color: #585858;
-     --card-glow-color: rgba(57, 136, 255, 0.25);
+     --card-border-color:  #7e5025;
+     --card-glow-color: rgba(0, 0, 0, 0.25);
+     --card-overlay-color-a: rgb(216, 220, 228, 1);
+     --card-overlay-color-b: rgba(216, 220, 228, 0.95);
  }
 
  .dark-theme .svg {
@@ -34,7 +38,6 @@
      margin: 0;
  }
 
- /*prevents nav menu from shifting to left when vertical scrollbar is present*/
  html {
      overflow-x: hidden;
      margin-right: calc(100% - 100vw);
@@ -189,9 +192,10 @@
      display: flex;
      align-items: center;
      font-size: 1.25rem;
+     font-weight: 300;
      width: 100%;
      justify-content: center;
-     border-bottom: 2px solid var(--card-border-color);
+     border-bottom: 1px solid var(--card-border-color);
      background-color: var(--header-bg-color);
  }
 
@@ -201,6 +205,25 @@
      background-size: cover;
      background-position: top center;
  }
+
+.card-bg-overlay {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(var(--card-overlay-color-b), var(--card-overlay-color-a));
+    justify-content: center;
+    align-items: end;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--bg-color);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.card-bg-overlay:hover {
+    opacity: 1;
+}
 
  .card-footer {
      height: 50px;
@@ -388,7 +411,7 @@
      }
  }
 
- @media all and (max-width: 900px) {
+ @media all and (max-width: 1100px) {
      .page-content {
          flex-direction: column;
      }
@@ -396,11 +419,19 @@
      header {
          width: 100%;
          margin-bottom: 2rem;
+         height: auto;
+         min-height: 100%;
+     }
+
+     nav {
+        display: flex;
+        gap: 2rem;
+        
      }
 
      main {
-         padding-left: 0rem;
-         padding-right: 0rem;
+         padding-left: 2rem;
+         padding-right: 2rem;
          width: 100%;
      }
 
@@ -408,6 +439,18 @@
          margin-bottom: 1rem;
          width: 100%;
      }
+
+     .work-header {
+        text-align: center;
+        margin-bottom: 4rem;
+     }
+
+     .work-samples-visible {
+        grid-template-columns: repeat(auto-fill, 250px);
+        justify-self: center;
+        justify-content: center;
+        width: 100vw;
+    }
  }
 
  @media all and (max-width: 500px) {
@@ -422,6 +465,10 @@
          text-align: left;
          min-height: 100%;
          margin-bottom: 0;
+     }
+
+     nav {
+        display: block;
      }
 
      .theme-toggle {
