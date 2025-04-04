@@ -6,7 +6,7 @@ const projectData = [
       "My first full stack app. The primary goal was to learn how to work with React and Bootstrap and to create an app that allows users to create an account, login and browse information about movies, actors and directors.\n Information is fetched from a backend that was built as part of this project. \n\n Made with:\n React, React Bootstrap, React Redux, Node/Express, MongoDB, Mongoose, Passport, Express Validator, Postman. \n",
     siteURL: "https://muhviedb.netlify.app/",
     githubURL: "https://github.com/timok81/cf-movies-client",
-    caseStudy: ".assets/case-studies/MovieDB-CaseStudy.pdf",
+    caseStudy: "./assets/case-studies/MovieDB-CaseStudy.pdf",
     screenshots: [
       "./assets/img/projects/project3/project3_screenshot1_.png",
       "./assets/img/projects/project3/project3_screenshot2.png",
