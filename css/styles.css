@@ -5,8 +5,9 @@
      --header-bg-color: #ffffff;
      --accent-color: rgb(119, 37, 37);
      --link-color: #0965b1;
-     --card-border-color: rgb(187, 187, 187);
+     --card-border-color: rgb(238, 227, 227);
      --card-glow-color: rgba(0, 0, 0, 0.25);
+     --card-glow-color-b: rgba(0, 0, 0, 0.025);
      --card-overlay-color-a: rgba(30, 44, 63, 1);
      --card-overlay-color-b: rgba(30, 44, 63, 0.95);
  }
@@ -18,7 +19,7 @@
      --header-bg-color: #232e3a;
      --accent-color: #ff7056;
      --link-color: #59afff;
-     --card-border-color: #667692;
+     --card-border-color: #29313f;
      --card-glow-color: rgba(0, 0, 0, 0.25);
      --card-overlay-color-a: rgb(216, 220, 228, 1);
      --card-overlay-color-b: rgba(216, 220, 228, 0.95);
@@ -195,7 +196,7 @@
  .artstation-icon-container {
      width: 20px;
      height: 20px;
-     background-image: url("../img/ArtStation-logomark-white.svg");
+     background-image: url("../assets/img/artstation-icon.png");
      background-size: cover;
  }
 
@@ -228,6 +229,7 @@
      transition: transform 0.1s;
      cursor: pointer;
      overflow: hidden;
+     box-shadow: 0 5px 3px var(--card-glow-color-b);
  }
 
  .card-header {
@@ -238,7 +240,7 @@
      font-weight: 300;
      width: 100%;
      justify-content: center;
-     border-bottom: 1px solid var(--card-border-color);
+
      background-color: var(--header-bg-color);
  }
 
@@ -357,8 +359,8 @@
  }
 
  .case-study-link-hidden {
-    visibility: hidden;
-    height: 0;
+     visibility: hidden;
+     height: 0;
  }
 
  .close-modal,
@@ -387,12 +389,12 @@
  .modal-description {
      padding-left: 2.5rem;
      margin-bottom: 3rem;
-     max-width: 1000px;
+     max-width: 700px;
  }
 
  .modal-links {
      padding-left: 2.5rem;
-     margin-bottom: 2rem;
+     margin-bottom: 1rem;
  }
 
  .modal-screenshots {
@@ -483,7 +485,7 @@
 
      .work-header {
          text-align: center;
-         margin-bottom: 4rem;
+         margin-bottom: 1rem;
      }
 
      .work-samples-visible {
@@ -555,7 +557,6 @@
 
      .modal-links {
          padding-left: 1rem;
-         margin-bottom: 2rem;
      }
 
      .modal-description {

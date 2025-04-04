@@ -3,30 +3,33 @@ const projectData = [
     title: "Movie Database",
     synopsis: "MERN stack app for viewing information about movies",
     description:
-      "A full-stack web app. A movie database site that allows users to create an account, login, browse movies, directors, actors and genres and view information about them.\n\n Made with:\n React, React Bootstrap, React Redux, Node/Express, MongoDB, Mongoose, Passport, Express Validator, Postman. \n",
+      "My first full stack app. The primary goal was to learn how to work with React and Bootstrap and to create an app that allows users to create an account, login and browse information about movies, actors and directors.\n Information is fetched from a backend that was built as part of this project. \n\n Made with:\n React, React Bootstrap, React Redux, Node/Express, MongoDB, Mongoose, Passport, Express Validator, Postman. \n",
     siteURL: "https://muhviedb.netlify.app/",
     githubURL: "https://github.com/timok81/cf-movies-client",
-    caseStudy: "./case-studies/MovieDB-CaseStudy.pdf",
+    caseStudy: ".assets/case-studies/MovieDB-CaseStudy.pdf",
     screenshots: [
-      "./img/projects/project3/project3_screenshot1_.png",
-      "./img/projects/project3/project3_screenshot2.png",
-      "./img/projects/project3/project3_screenshot3.png",
-      "./img/projects/project3/project3_screenshot4.png",
-      "./img/projects/project3/project3_screenshot5.png",
-      "./img/projects/project3/project3_screenshot6.png",
+      "./assets/img/projects/project3/project3_screenshot1_.png",
+      "./assets/img/projects/project3/project3_screenshot2.png",
+      "./assets/img/projects/project3/project3_screenshot3.png",
+      "./assets/img/projects/project3/project3_screenshot4.png",
+      "./assets/img/projects/project3/project3_screenshot5.png",
+      "./assets/img/projects/project3/project3_screenshot6.png",
     ],
-    tech: "React, Redux, Node/Express, MongoDb, Mongoose",
+    tech: "React, React Bootstrap, Redux, Node/Express, MongoDb, Mongoose",
   },
   {
     title: "Movie database API",
     synopsis: "Movie database API",
     description:
-      "Back-end for the movie database project. Handles all requests from the React front-end to the MongoDb database, as well as user login and registration. Authorization is done with JSON Web Tokens and password validation with Express Validator. \n\n Made with:\n Node/Express, MongoDB, Mongoose, Passport, Express Validator, Postman. \n",
-    siteURL: "https://moviemovie-7703363b92cb.herokuapp.com/api-documentation/",
+      "Back-end for the movie database project. Handles all requests from the React front-end to the MongoDb database, as well as user login and registration. Authorization is done with JSON Web Tokens and password validation with Express Validator. \n\n Made with:\n Node/Express, MongoDB, Mongoose, Passport, Express Validator, Postman, Swagger. \n",
+    siteURL: "https://moviemovie-7703363b92cb.herokuapp.com/api-docs/",
     githubURL: "https://github.com/timok81/cf-movie-api",
     caseStudy: "",
-    screenshots: ["./img/projects/project2/project2_screenshot1_.png"],
-    tech: "Node/Express, MongoDb, Mongoose",
+    screenshots: [
+      "./assets/img/projects/project2/project2_screenshot1_.png",
+      "./assets/img/projects/project2/project2_screenshot1.png",
+    ],
+    tech: "Node/Express, MongoDb, Mongoose, Swagger, Postman",
   },
   {
     title: "Meet App",
@@ -37,10 +40,10 @@ const projectData = [
     githubURL: "https://github.com/timok81/cf-meet",
     caseStudy: "",
     screenshots: [
-      "./img/projects/project4/project4_screenshot1_.png",
-      "./img/projects/project4/project4_screenshot1.png",
-      "./img/projects/project4/project4_screenshot2.png",
-      "./img/projects/project4/project4_screenshot3.png",
+      "./assets/img/projects/project4/project4_screenshot1_.png",
+      "./assets/img/projects/project4/project4_screenshot1.png",
+      "./assets/img/projects/project4/project4_screenshot2.png",
+      "./assets/img/projects/project4/project4_screenshot3.png",
     ],
     tech: "React, AWS Lambda, OAuth2, React Testing Library, Jest-Cucumber, Puppeteer",
   },
@@ -53,10 +56,10 @@ const projectData = [
     githubURL: "https://github.com/timok81/cf-chat",
     caseStudy: "",
     screenshots: [
-      "./img/projects/project5/project5_screenshot1_.png",
-      "./img/projects/project5/project5_screenshot1.png",
-      "./img/projects/project5/project5_screenshot2.png",
-      "./img/projects/project5/project5_screenshot3.png",
+      "./assets/img/projects/project5/project5_screenshot1_.png",
+      "./assets/img/projects/project5/project5_screenshot1.png",
+      "./assets/img/projects/project5/project5_screenshot2.png",
+      "./assets/img/projects/project5/project5_screenshot3.png",
     ],
     tech: "React Native, Expo, Gifted Chat",
   },
@@ -69,38 +72,22 @@ const projectData = [
     githubURL: "https://github.com/timok81/cf-pokedex",
     caseStudy: "",
     screenshots: [
-      "./img/projects/project1/project1_screenshot1_.png",
-      "./img/projects/project1/project1_screenshot1.png",
-      "./img/projects/project1/project1_screenshot2.png",
-      "./img/projects/project1/project1_screenshot3.png",
+      "./assets/img/projects/project1/project1_screenshot1_.png",
+      "./assets/img/projects/project1/project1_screenshot1.png",
+      "./assets/img/projects/project1/project1_screenshot2.png",
+      "./assets/img/projects/project1/project1_screenshot3.png",
     ],
     tech: "HTML, CSS, JavaScript, Bootstrap",
-  },
-  {
-    title: "MovieDb Angular",
-    synopsis: "Angular version of Movie database",
-    description:
-      "An Angular-version of the React-based movie database app.\n This project was an introduction to Angular and Typescript, and thus has more limited features compared to the React-version. \n\n Made with: Angular, Angular Material.",
-    siteURL: "https://timok81.github.io/cf-movies-angular-client/",
-    githubURL: "https://github.com/timok81/cf-movies-angular-client",
-    caseStudy: "",
-    screenshots: [
-      "./img/projects/project6/project6_screenshot1_.png",
-      "./img/projects/project6/project6_screenshot1.png",
-      "./img/projects/project6/project6_screenshot2.png",
-      "./img/projects/project6/project6_screenshot3.png",
-    ],
-    tech: "Angular, Angular Material",
   },
   {
     title: "My portfolio site",
     synopsis: "My portfolio site",
     description:
-      "It's this site you're currently on.\n I wanted this site to be simple to work with and not use any third party tools. Everything happens on one page and javascript is used to display the content.\n Project details are displayed with modals that are integrated to the layout of the site (this modal being an example). I also wanted a particular visual style, so I didn't want to use an external library for that. \n\n Made with: HTML, CSS, JavaScript.",
-    siteURL: "https://timok81.github.io/portfolio-site/",
+      "The site you're currently on.\n My aim was to create a simple portfolio site that doesn't use any third-party tools. Everything happens on one page and javascript is used to display the project information in modals.\n\n Made with: HTML, CSS, JavaScript.",
+    siteURL: "https://timokujansuu.com",
     githubURL: "https://github.com/timok81/portfolio-site",
     caseStudy: "",
-    screenshots: ["./img/projects/project7/project7_screenshot1.png"],
+    screenshots: ["./assets/img/projects/project7/project7_screenshot1.png"],
     tech: "HTML, CSS, JavaScript",
   },
 ];
@@ -220,7 +207,7 @@ const openModal = (project) => {
   modalGithubLink.href = project.githubURL;
   if (project.caseStudy !== "") {
     modalCaseStudyLink.href = project.caseStudy;
-    getFileSize(project.caseStudy, ".case-study-text")
+    getFileSize(project.caseStudy, ".case-study-text");
   } else {
     modalCaseStudyContainer.classList.add("case-study-link-hidden");
   }
@@ -267,6 +254,7 @@ function applyTheme(theme) {
   }
 }
 
+// This will only work when deployed or with live server
 async function getFileSize(url, element) {
   try {
     const response = await fetch(url, { method: "HEAD" });
@@ -274,7 +262,9 @@ async function getFileSize(url, element) {
 
     if (size) {
       const sizeMB = (size / (1024 * 1024)).toFixed(2); // Convert bytes to MB
-      document.querySelector(element).textContent = `View case study (PDF, ${sizeMB} MB)`;
+      document.querySelector(
+        element
+      ).textContent = `View case study (PDF, ${sizeMB} MB)`;
     }
   } catch (error) {
     console.error("Error fetching file size:", error);
