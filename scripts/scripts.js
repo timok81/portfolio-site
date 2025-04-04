@@ -1,7 +1,7 @@
 const projectData = [
   {
     title: "Movie Database",
-    synopsis: "MERN stack app for viewing information about movies",
+    synopsis: "MERN stack movie browsing app",
     description:
       "My first full stack app. The primary goal was to learn how to work with React and Bootstrap and to create an app that allows users to create an account, login and browse information about movies, actors and directors.\n Information is fetched from a backend that was built as part of this project. \n\n Made with:\n React, React Bootstrap, React Redux, Node/Express, MongoDB, Mongoose, Passport, Express Validator, Postman. \n",
     siteURL: "https://muhviedb.netlify.app/",
@@ -33,7 +33,7 @@ const projectData = [
   },
   {
     title: "Meet App",
-    synopsis: "PWA for viewing events on Google Calendar",
+    synopsis: "PWA for viewing events",
     description:
       "A progressive web app for searching and viewing events at different locations with the ability to add them to your calendar.\n Uses serverless functions for authorization and fetching events from Google Calendar API. Built with test-driven development practices using React Testing Library, Jest-Cucumber and Puppeteer. Also features charts for viewing information about the events with the help of Recharts.\n\n Made with:\n React, Vite, AWS Lambda, OAuth2, Recharts, React testing library, Jest-Cucumber, Puppeteer. \n",
     siteURL: "https://cf-meet.vercel.app/",
@@ -83,7 +83,7 @@ const projectData = [
     title: "My portfolio site",
     synopsis: "My portfolio site",
     description:
-      "The site you're currently on.\n My aim was to create a simple portfolio site that doesn't use any third-party tools. Everything happens on one page and javascript is used to display the project information in modals.\n\n Made with: HTML, CSS, JavaScript.",
+      "The site you're currently on.\n My aim was to create a simple portfolio site that doesn't use any third-party tools. Everything happens on one page and JavaScript is used to display the project information in modals.\n\n Made with: HTML, CSS, JavaScript.",
     siteURL: "https://timokujansuu.com",
     githubURL: "https://github.com/timok81/portfolio-site",
     caseStudy: "",
@@ -176,7 +176,14 @@ projectData.forEach((project) => {
   cardImage.style.backgroundImage = `url(${project.screenshots[0]})`;
   const cardBgOverlay = document.createElement("div");
   cardBgOverlay.classList.add("card-bg-overlay");
-  cardBgOverlay.innerText = project.tech;
+  const overlayTitle = document.createElement("div");
+  overlayTitle.classList.add("card-overlay-title");
+  overlayTitle.innerText += project.synopsis;
+  const overlayTech = document.createElement("div");
+  overlayTech.classList.add("card-overlay-tech");
+  overlayTech.innerText += project.tech;
+  cardBgOverlay.appendChild(overlayTitle);
+  cardBgOverlay.appendChild(overlayTech);
   cardImage.appendChild(cardBgOverlay);
   card.appendChild(cardImage);
 
