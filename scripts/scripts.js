@@ -6,9 +6,9 @@ const projectData = [
       "A full-stack web app. A movie database site that allows users to create an account, login, browse movies, directors, actors and genres and view information about them.\n\n Made with:\n React, React Bootstrap, React Redux, Node/Express, MongoDB, Mongoose, Passport, Express Validator, Postman. \n",
     siteURL: "https://muhviedb.netlify.app/",
     githubURL: "https://github.com/timok81/cf-movies-client",
+    caseStudy: "./case-studies/MovieDB-CaseStudy.pdf",
     screenshots: [
       "./img/projects/project3/project3_screenshot1_.png",
-      "./img/projects/project3/project3_screenshot1.png",
       "./img/projects/project3/project3_screenshot2.png",
       "./img/projects/project3/project3_screenshot3.png",
       "./img/projects/project3/project3_screenshot4.png",
@@ -24,6 +24,7 @@ const projectData = [
       "Back-end for the movie database project. Handles all requests from the React front-end to the MongoDb database, as well as user login and registration. Authorization is done with JSON Web Tokens and password validation with Express Validator. \n\n Made with:\n Node/Express, MongoDB, Mongoose, Passport, Express Validator, Postman. \n",
     siteURL: "https://moviemovie-7703363b92cb.herokuapp.com/api-documentation/",
     githubURL: "https://github.com/timok81/cf-movie-api",
+    caseStudy: "",
     screenshots: ["./img/projects/project2/project2_screenshot1_.png"],
     tech: "Node/Express, MongoDb, Mongoose",
   },
@@ -34,6 +35,7 @@ const projectData = [
       "A progressive web app for searching and viewing events at different locations with the ability to add them to your calendar.\n Uses serverless functions for authorization and fetching events from Google Calendar API. Built with test-driven development practices using React Testing Library, Jest-Cucumber and Puppeteer. Also features charts for viewing information about the events with the help of Recharts.\n\n Made with:\n React, Vite, AWS Lambda, OAuth2, Recharts, React testing library, Jest-Cucumber, Puppeteer. \n",
     siteURL: "https://cf-meet.vercel.app/",
     githubURL: "https://github.com/timok81/cf-meet",
+    caseStudy: "",
     screenshots: [
       "./img/projects/project4/project4_screenshot1_.png",
       "./img/projects/project4/project4_screenshot1.png",
@@ -49,6 +51,7 @@ const projectData = [
       "A simple React Native chat app featuring basic text messaging, image attachments, sending location data via Google Maps and voice messages. Uses Google Firebase for database. The chat functionality is provided by Gifted Chat.\n\n Made with:\n React Native, Expo, Gifted Chat, Google Firebase. \n",
     siteURL: "https://github.com/timok81/cf-chat",
     githubURL: "https://github.com/timok81/cf-chat",
+    caseStudy: "",
     screenshots: [
       "./img/projects/project5/project5_screenshot1_.png",
       "./img/projects/project5/project5_screenshot1.png",
@@ -64,6 +67,7 @@ const projectData = [
       "A simple pokedex app that let's you browse Pokemons and view their data.\n This project was an introduction to working with Javascript and fetching and displaying API data, as well as using Bootstrap for styling. The pokemon data comes from www.pokeapi.co.\n\n Made with:\n HTML, CSS, JavaScript, Bootstrap. \n",
     siteURL: "https://timok81.github.io/cf-pokedex/",
     githubURL: "https://github.com/timok81/cf-pokedex",
+    caseStudy: "",
     screenshots: [
       "./img/projects/project1/project1_screenshot1_.png",
       "./img/projects/project1/project1_screenshot1.png",
@@ -79,6 +83,7 @@ const projectData = [
       "An Angular-version of the React-based movie database app.\n This project was an introduction to Angular and Typescript, and thus has more limited features compared to the React-version. \n\n Made with: Angular, Angular Material.",
     siteURL: "https://timok81.github.io/cf-movies-angular-client/",
     githubURL: "https://github.com/timok81/cf-movies-angular-client",
+    caseStudy: "",
     screenshots: [
       "./img/projects/project6/project6_screenshot1_.png",
       "./img/projects/project6/project6_screenshot1.png",
@@ -91,9 +96,10 @@ const projectData = [
     title: "My portfolio site",
     synopsis: "My portfolio site",
     description:
-      "This very site you're currently looking at.\n I wanted this site to be simple to work with and not use any third party tools. Everything happens on one page and javascript is used to display the content.\n Project details are displayed with modals that are integrated to the layout of the site (this modal being an example). I also wanted a particular visual style, so I didn't want to use an external library for that. \n\n Made with: HTML, CSS, JavaScript.",
+      "It's this site you're currently on.\n I wanted this site to be simple to work with and not use any third party tools. Everything happens on one page and javascript is used to display the content.\n Project details are displayed with modals that are integrated to the layout of the site (this modal being an example). I also wanted a particular visual style, so I didn't want to use an external library for that. \n\n Made with: HTML, CSS, JavaScript.",
     siteURL: "https://timok81.github.io/portfolio-site/",
     githubURL: "https://github.com/timok81/portfolio-site",
+    caseStudy: "",
     screenshots: ["./img/projects/project7/project7_screenshot1.png"],
     tech: "HTML, CSS, JavaScript",
   },
@@ -110,6 +116,8 @@ const modalScreenshots = document.querySelector(".modal-screenshots");
 const modalLinks = document.querySelectorAll(".modal-links a");
 const modalSiteLink = modalLinks[0];
 const modalGithubLink = modalLinks[1];
+const modalCaseStudyLink = modalLinks[2];
+const modalCaseStudyContainer = document.querySelector(".case-study-link");
 const imageModal = document.querySelector(".image-modal");
 const imageFullsize = document.querySelector(".project-image");
 const themeToggleButton = document.querySelector(".theme-toggle");
@@ -210,6 +218,12 @@ const openModal = (project) => {
   modalDescription.innerText = project.description;
   modalSiteLink.href = project.siteURL;
   modalGithubLink.href = project.githubURL;
+  if (project.caseStudy !== "") {
+    modalCaseStudyLink.href = project.caseStudy;
+    getFileSize(project.caseStudy, ".case-study-text")
+  } else {
+    modalCaseStudyContainer.classList.add("case-study-link-hidden");
+  }
 
   // create project thumbnails
   for (let i = 1; i < project.screenshots.length; i++) {
@@ -233,6 +247,9 @@ const closeModal = () => {
   modalBg.classList.add("project-modal-bg-hidden");
   modalContent.classList.remove("modal-content-visible");
   modalContent.classList.add("modal-content-hidden");
+  modalCaseStudyLink.href = "";
+  modalCaseStudyContainer.classList.remove("case-study-link-hidden");
+  document.querySelector(".case-study-text").textContent = "";
 
   workContainer.classList.remove("work-samples-hidden");
   const thumbnails = document.querySelectorAll(".thumbnail");
@@ -247,5 +264,19 @@ function applyTheme(theme) {
     rootElement.classList.add("dark-theme");
   } else {
     rootElement.classList.remove("dark-theme");
+  }
+}
+
+async function getFileSize(url, element) {
+  try {
+    const response = await fetch(url, { method: "HEAD" });
+    const size = response.headers.get("Content-Length");
+
+    if (size) {
+      const sizeMB = (size / (1024 * 1024)).toFixed(2); // Convert bytes to MB
+      document.querySelector(element).textContent = `View case study (PDF, ${sizeMB} MB)`;
+    }
+  } catch (error) {
+    console.error("Error fetching file size:", error);
   }
 }
