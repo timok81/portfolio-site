@@ -214,7 +214,7 @@ const openModal = (project) => {
   modalGithubLink.href = project.githubURL;
   if (project.caseStudy !== "") {
     modalCaseStudyLink.href = project.caseStudy;
-    getFileSize(project.caseStudy, ".case-study-text");
+    //getFileSize(project.caseStudy, ".case-study-text");
   } else {
     modalCaseStudyContainer.classList.add("case-study-link-hidden");
   }
