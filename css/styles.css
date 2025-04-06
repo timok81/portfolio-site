@@ -177,11 +177,10 @@
  }
 
  .header-link,
- .modal-links div {
+ .modal-links p {
      display: flex;
-     align-items: center;
      gap: 10px;
-     justify-content: left;
+     text-align: left;
      margin-bottom: 0.25rem;
  }
 
